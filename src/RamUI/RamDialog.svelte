@@ -20,6 +20,7 @@ function maskControl(){
 </div>
 <div class="dialog-layer" style="display:{display}">
     <div class="dialog-nav">对话框<span class="dialog-close" on:click="{maskControl}">X</span></div>
+    <slot></slot>
 </div>
 
 <style>

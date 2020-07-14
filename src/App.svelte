@@ -7,6 +7,8 @@
 
 	import RamDialog from '../src/RamUI/RamDialog.svelte';
 
+	import RamDrag from '../src/RamUI/RamDrag.svelte';
+
 	function handleClick() {
 		alert('clicked');
 	}
@@ -50,6 +52,9 @@
 	</RamRow>
 </RamCard>
 <RamButton {...{btn:"primary",txt:"打开对话框",style:"margin-top:3rem;"}} on:click={handleDialog}/>
-<RamDialog  bind:show={dshow}>
 
-</RamDialog>
+<RamDialog  bind:show={dshow}></RamDialog>
+
+<RamDrag>
+拖拽层
+</RamDrag>
