@@ -8,6 +8,7 @@
 	import RamDialog from '../src/RamUI/RamDialog.svelte';
 
 	import RamDrag from '../src/RamUI/RamDrag.svelte';
+    import RamTable from '../src/RamUI/RamTable.svelte';
 
 	function handleClick() {
 		alert('clicked');
@@ -23,6 +24,18 @@
 	function closeDialog(){
     	dshow=false;
 	}
+	
+	let tTitle=["序号","名称","年龄"];
+    let tData=[{
+		"id":1,
+		"name":"张三",
+		"age":18
+	},{
+		"id":2,
+		"name":"小明",
+		"age":16
+	}];
+
 </script>
 
 <style>
@@ -58,3 +71,4 @@
 <RamDrag>
 拖拽层
 </RamDrag>
+<RamTable {...{title:tTitle,data:tData,style:"font-size:1rem;"}}></RamTable>
