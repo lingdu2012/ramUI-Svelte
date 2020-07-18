@@ -9,6 +9,7 @@
 
 	import RamDrag from '../src/RamUI/RamDrag.svelte';
     import RamTable from '../src/RamUI/RamTable.svelte';
+	import RamMenu from '../src/RamUI/RamMenu.svelte';
 
 	function handleClick() {
 		alert('clicked');
@@ -35,7 +36,17 @@
 		"name":"小明",
 		"age":16
 	}];
-
+    let mTitle="菜单栏";
+    let mMenu=[{
+		"title":"首页",
+		"link":"#"
+	},{
+		"title":"快速开始",
+		"link":"#"
+	},{
+		"title":"API文档",
+		"link":"#"
+	}];
 </script>
 
 <style>
@@ -72,3 +83,4 @@
 拖拽层
 </RamDrag>
 <RamTable {...{title:tTitle,data:tData,style:"font-size:1rem;"}}></RamTable>
+<RamMenu {...{title:mTitle,menus:mMenu}}></RamMenu>
