@@ -10,6 +10,7 @@
 	import RamDrag from '../src/RamUI/RamDrag.svelte';
     import RamTable from '../src/RamUI/RamTable.svelte';
 	import RamMenu from '../src/RamUI/RamMenu.svelte';
+	import RamContainer from '../src/RamUI/RamContainer.svelte';
 
 	function handleClick() {
 		alert('clicked');
@@ -84,3 +85,10 @@
 </RamDrag>
 <RamTable {...{title:tTitle,data:tData,style:"font-size:1rem;"}}></RamTable>
 <RamMenu {...{title:mTitle,menus:mMenu}}></RamMenu>
+
+<RamContainer {...{style:"width:600px;height:300px;border:1px solid #ccc;margin:5rem auto;"}}>
+	<div slot="header" style="height:40px;border-bottom:1px solid #000;">顶部菜单</div>
+	<div slot="aside" style="width:100px;height:100%;border-right:1px solid red;">左侧菜单</div>
+	<div slot="main" style="border-bottom:1px solid black;height:100%;">内容区</div>
+	<div slot="footer" style="height:3rem;">底部区域</div>
+</RamContainer>
