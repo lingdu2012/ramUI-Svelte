@@ -21,7 +21,13 @@
 	let dshow=false;
 	function handleDialog(){
 		dshow=true;
-		console.log("dshow:"+dshow);
+		// 动态创建
+		// const appD = new RamDialog({
+		// 	target: document.body,
+		// 	props: {
+		// 		show: true
+		// 	}
+		// });
 	}
 	function closeDialog(){
     	dshow=false;
