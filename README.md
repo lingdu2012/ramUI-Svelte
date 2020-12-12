@@ -1,8 +1,9 @@
-# ramUI-Svelte
+# ramUI-Svelte-Bootstrap
 
 a UI component for Svelte，It will be kept up to date
 
-这是一个基于Svelte的UI组件，目前处于demo阶段，将持续更新。
+> 这是一个基于Svelte和Bootstrap的UI组件封装实践
+> 本项目基于Svelte3.X 和 Bootstrap 5.X
 
 ## 基本使用方法
 
