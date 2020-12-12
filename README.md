@@ -12,16 +12,20 @@ a UI component for Svelte，It will be kept up to date
 - 在所需要的文件中引入所需要的组件
 
   ```javascript
-  例如 
-  import RamRow from '../src/RamUI/RamRow.svelte';
-  import RamCell from '../src/RamUI/RamCell.svelte';
+ // 例如 
+    import 'bootstrap/dist/css/bootstrap.min.css';//引入完整bootstrap样式
+    import RamContainer from '../src/components/Container.svelte';
+    import RamRow from '../src/components/Row.svelte';
+    import RamCol from '../src/components/Col.svelte';
   ```
 
   ```javascript
-  <RamRow {...{valign:"top",align:"center",style:"border:1px solid red;"}}>
-  	<RamCell rowNum={2}>hello</RamCell>
-  	<RamCell {...{rowNum:3,style:"border:1px solid green"}}>world</RamCell>
-  </RamRow>
+  <RamContainer type="fluid">
+     <RamRow exClass="row-cols-auto">
+        <RamCol rowNum="3"></RamCol>
+        <RamCol rowNum="3"></RamCol>
+     </RamRow>
+   </RamContainer>
   ```
 ## 基础说明  
 
