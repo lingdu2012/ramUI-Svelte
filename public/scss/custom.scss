@@ -1,0 +1,30 @@
+$body-bg: #000;
+$body-color: #111;
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+);
+//方案一：完全引入
+//引入所有样式
+//@import "../node_modules/bootstrap/scss/bootstrap";
+
+
+//方案二：选择性引入
+// Required
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+// Optional
+@import "../node_modules/bootstrap/scss/root";
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+@import "../node_modules/bootstrap/scss/images";
+@import "../node_modules/bootstrap/scss/containers";
+@import "../node_modules/bootstrap/scss/grid";

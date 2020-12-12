@@ -1,100 +1,71 @@
 <script>
-	export let name;
-	import RamRow from '../src/RamUI/RamRow.svelte';
-	import RamCell from '../src/RamUI/RamCell.svelte';
-	import RamButton from '../src/RamUI/RamButton.svelte';
-	import RamCard from '../src/RamUI/RamCard.svelte';
+    import 'bootstrap/dist/css/bootstrap.min.css';
+    import RamContainer from '../src/components/Container.svelte';
+    import RamRow from '../src/components/Row.svelte';
+    import RamCol from '../src/components/Col.svelte';
+    import RamTable from '../src/components/Table.svelte';
+    
+    export let name;
 
-	import RamDialog from '../src/RamUI/RamDialog.svelte';
 
-	import RamDrag from '../src/RamUI/RamDrag.svelte';
-    import RamTable from '../src/RamUI/RamTable.svelte';
-	import RamMenu from '../src/RamUI/RamMenu.svelte';
-	import RamContainer from '../src/RamUI/RamContainer.svelte';
+    let ths=['序号',"姓名","学号"];
+    let cols=[0,1,2];
+    let data=[[1,'张三','10001'],[2,'李四','10002']];
+    let cols2=['ind','username','nums'];
+    let data2=[{
+        ind:1,
+        username:'小明',
+        nums:'10003'
+    },{
+        ind:2,
+        username:'小红',
+        nums:'10004'
+    }];
 
-	function handleClick() {
-		alert('clicked');
-	}
-	function myclick() {
-		alert('clicked22');
-	}
-	let dshow=false;
-	function handleDialog(){
-		dshow=true;
-		// 动态创建
-		// const appD = new RamDialog({
-		// 	target: document.body,
-		// 	props: {
-		// 		show: true
-		// 	}
-		// });
-	}
-	function closeDialog(){
-    	dshow=false;
-	}
-	
-	let tTitle=["序号","名称","年龄"];
-    let tData=[{
-		"id":1,
-		"name":"张三",
-		"age":18
-	},{
-		"id":2,
-		"name":"小明",
-		"age":16
-	}];
-    let mTitle="菜单栏";
-    let mMenu=[{
-		"title":"首页",
-		"link":"#"
-	},{
-		"title":"快速开始",
-		"link":"#"
-	},{
-		"title":"API文档",
-		"link":"#"
-	}];
 </script>
 
-<style>
-	h1 {
-		color: purple;
-	}
-</style>
+<main>
+	<h1>Hello ,{name}!</h1>
+    <RamContainer type="fluid">
+     <RamRow exClass="row-cols-auto">
+        <RamCol rowNum="3"><button type="button" class="btn btn-primary">Primary</button></RamCol>
+        <RamCol rowNum="3"><button type="button" class="btn btn-secondary">Secondary</button></RamCol>
+        <RamCol><button type="button" class="btn btn-success">Success</button>
+        <button type="button" class="btn btn-danger">Danger</button>
+        </RamCol>
+     </RamRow>
+    <RamTable>
+        <thead slot="thead">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+            </tr>
+        </thead>
+        <tbody slot="tbody">
+            <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+                <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+                </tr>
+                <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+            </tr>
+        </tbody>
+    </RamTable>
+    <RamTable ths={ths} cols="{cols}" data="{data}" exClass="table-striped"></RamTable>
+    <RamTable ths={ths} cols="{cols2}" data="{data2}" exClass="table-hover"></RamTable>
+    </RamContainer>
+ 
 
-<h1>Hello {name}!</h1>
-<RamRow {...{valign:"top",align:"center",style:"border:1px solid red;"}}>
-	<RamCell rowNum={2}>hello</RamCell>
-	<RamCell {...{rowNum:3,style:"border:1px solid green"}}>world</RamCell>
-</RamRow>
-<RamRow style={"margin-top:1rem;"}>
-	<RamCell rowNum={12} style="text-align:center">
-		<RamButton {...{btn:"primary"}} on:click={handleClick}/>
-		<RamButton {...{btn:"danger"}} on:click={myclick}/>
-		<RamButton {...{btn:"link"}}/>
-		<RamButton {...{btn:"primary-outline"}} on:click={handleClick}/>
-		<RamButton {...{btn:"danger-outline"}} on:click={myclick}/>
-	</RamCell>
-</RamRow>
-<RamCard {...{title:"卡片标题",mark:"这是说明"}}>
-	<RamRow {...{valign:"top",align:"center",style:"margin-top:1rem;"}}>
-		<RamCell rowNum={2}>hello</RamCell>
-		<RamCell {...{rowNum:3}}>world</RamCell>
-	</RamRow>
-</RamCard>
-<RamButton {...{btn:"primary",txt:"打开对话框",style:"margin-top:3rem;"}} on:click={handleDialog}/>
-
-<RamDialog  bind:show={dshow}></RamDialog>
-
-<RamDrag>
-拖拽层
-</RamDrag>
-<RamTable {...{title:tTitle,data:tData,style:"font-size:1rem;"}}></RamTable>
-<RamMenu {...{title:mTitle,menus:mMenu}}></RamMenu>
-
-<RamContainer {...{style:"width:600px;height:300px;border:1px solid #ccc;margin:5rem auto;"}}>
-	<div slot="header" style="height:40px;border-bottom:1px solid #000;">顶部菜单</div>
-	<div slot="aside" style="width:100px;height:100%;border-right:1px solid red;">左侧菜单</div>
-	<div slot="main" style="border-bottom:1px solid black;height:100%;">内容区</div>
-	<div slot="footer" style="height:3rem;">底部区域</div>
-</RamContainer>
+</main>
