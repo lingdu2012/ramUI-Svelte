@@ -12,8 +12,7 @@ a UI component for Svelte，It will be kept up to date
 - 在所需要的文件中引入所需要的组件
 
   ```javascript
- //例如 
-    import 'bootstrap/dist/css/bootstrap.min.css';//引入完整bootstrap样式
+    import 'bootstrap/dist/css/bootstrap.min.css';
     import RamContainer from '../src/components/Container.svelte';
     import RamRow from '../src/components/Row.svelte';
     import RamCol from '../src/components/Col.svelte';
