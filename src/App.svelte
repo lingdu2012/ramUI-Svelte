@@ -1,5 +1,4 @@
 <script>
-    import 'bootstrap/dist/css/bootstrap.min.css';
     import RamContainer from '../src/components/Container.svelte';
     import RamRow from '../src/components/Row.svelte';
     import RamCol from '../src/components/Col.svelte';
@@ -25,7 +24,7 @@
 </script>
 
 <main>
-	<h1>Hello ,{name}!</h1>
+	<h1 class="text-primary">Hello ,{name}!</h1>
     <RamContainer type="fluid">
      <RamRow exClass="row-cols-auto">
         <RamCol rowNum="3"><button type="button" class="btn btn-primary">Primary</button></RamCol>
@@ -68,4 +67,7 @@
     </RamContainer>
  
 
-</main>
+</main> 
+<style lang="scss">
+
+</style>

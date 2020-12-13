@@ -1,0 +1,28 @@
+//如果使用自定义主题，需要预设相关颜色
+// $body-bg: #000;
+// $body-color: #111;
+// $primary: #0074d9;
+// $danger: #ff4136;
+
+// $theme-colors: (
+//   "primary":   $primary,
+//   "danger":     $danger,
+// );
+//方案一：完全引入
+//引入所有样式
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+
+//方案二：选择性引入
+// Required
+// @import "../node_modules/bootstrap/scss/functions";
+// @import "../node_modules/bootstrap/scss/variables";
+// @import "../node_modules/bootstrap/scss/mixins";
+
+// Optional
+// @import "../node_modules/bootstrap/scss/root";
+// @import "../node_modules/bootstrap/scss/reboot";
+// @import "../node_modules/bootstrap/scss/type";
+// @import "../node_modules/bootstrap/scss/images";
+// @import "../node_modules/bootstrap/scss/containers";
+// @import "../node_modules/bootstrap/scss/grid";
