@@ -11,6 +11,11 @@ a UI component for Svelte，It will be kept up to date
 * 坚持“适量”和“少即是多”的原则，保证灵活性的同时，降低组件复杂度。
 
 ### 主要依赖
+> 安装Bootstrap5.x时需要同时安装popper
+```javascript
+npm install --save @popperjs/core@^2.5.4
+```
+
 > 使用rollup作为打包工具
 ```javascript
 import svelte from 'rollup-plugin-svelte';
