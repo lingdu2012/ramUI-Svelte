@@ -13,6 +13,7 @@ a UI component for Svelte，It will be kept up to date
 ### 主要依赖
 > 安装Bootstrap5.x时需要同时安装popper
 ```javascript
+npm install bootstrap@next
 npm install --save @popperjs/core@^2.5.4
 ```
 
